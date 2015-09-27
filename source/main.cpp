@@ -28,9 +28,6 @@ int main(int argc , char** argv)
   minMaxLoc(out, &min, &max);
   out.convertTo(out, CV_8U, 255./(max-min), -255.0*min/(max-min));
 
-  //save
-  imwrite("../result/AnisotropicOfficeLambda="+ to_string(lambda) + "t=" + to_string(tMax) + ".png", out);
-
   imshow("Non linear anisotropic diffusion", out);
   waitKey(0);
     
